@@ -1,0 +1,9 @@
+<% content_for :page_title do %>
+  <%= Spree.t(plural_resource_name(Spree::Article)) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <%= button_link_to Spree.t(:new_article), new_object_url, { class: "btn-success", icon: 'add', id: 'admin_new_vendor' } %>
+<% end if can?(:create, Spree::Article) %>
+
+
