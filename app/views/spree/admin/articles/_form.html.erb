@@ -4,6 +4,14 @@
     <%= f.label :title %>
     <%= f.text_field :title, class: 'form-control' %>
   <% end %>
+  <% if Spree.version.to_f >= 3.6 %>
+    <%= f.field_container :article_img do %>
+      <%= f.label :article_img %>
+      <%= f.file_field :article_img %>
+      <!--<#%= image_tag main_app.url_for(@vendor.image.url(:small)) if @vendor.image %>-->
+    <% end %>
+  <% end %>
+
   <%= f.field_container :body do %>
     <%= f.label :body %>
     <%= f.text_area :body, class: 'form-control' %>
