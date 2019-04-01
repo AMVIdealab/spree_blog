@@ -7,6 +7,5 @@ Spree::Core::Engine.add_routes do
       end
     end
   end
-
-    resources :articles, only: [:index, :show]
+  resources :articles, only: [:index, :show], path: '/blog'
 end
